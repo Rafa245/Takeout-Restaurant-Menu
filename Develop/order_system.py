@@ -199,15 +199,16 @@ def print_receipt_line(item_name, price, quantity):
     price (float): The price of the meal item.
     quantity (int): The quantity of the meal item.
     """
+    # Adjust spacing to ensure alignment with the receipt format
     num_item_spaces = 32 - len(item_name)
-    num_price_spaces = 6 - len(str(price))
+    num_price_spaces = 6 - len(f"{price:.2f}")
 
-    # Create space strings
     item_spaces = " " * num_item_spaces
     price_spaces = " " * num_price_spaces
 
-    # Print the item name, price, and quantity
-    print(f"{item_name}{item_spaces}| ${price}{price_spaces}| {quantity}")
+    # Print the formatted receipt line
+    print(f"{item_name}{item_spaces}| ${price:.2f}{price_spaces}| {quantity}")
+
 
 
 def print_receipt_footer(total_price):
